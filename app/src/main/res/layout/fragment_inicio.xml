@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/azul_petroleo"
+    tools:context=".ui.InicioFragment">
+
+    <TextView
+        android:id="@+id/tvwelcome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="50dp"
+        android:background="@color/white"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/welcome" />
+
+    <Button
+        android:id="@+id/btncalendario"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Calendario Medicinas"
+        app:layout_constraintBottom_toTopOf="@+id/btnnewtratamiento"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvwelcome"
+        app:layout_constraintVertical_chainStyle="spread" />
+
+    <Button
+        android:id="@+id/btnnewtratamiento"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Nuevo tratamiento"
+        app:layout_constraintBottom_toTopOf="@+id/btncita"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btncalendario" />
+
+    <Button
+        android:id="@+id/btncita"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Pedir cita"
+        app:layout_constraintBottom_toTopOf="@+id/btnusercount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnnewtratamiento" />
+
+    <Button
+        android:id="@+id/btnusercount"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Tus datos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btncita" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

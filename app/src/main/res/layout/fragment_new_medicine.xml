@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_new_medicine"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cian_azul"
+    android:padding="16dp"
+    tools:context=".ui.NewMedicamentoFragment">
+
+    <EditText
+        android:id="@+id/etnombre_med"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:textColor="@color/black"
+        android:background="@drawable/rounded_background"
+        android:padding="5dp"
+        android:hint="@string/text_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etdosis_med"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:background="@drawable/rounded_background"
+        android:padding="5dp"
+        android:hint="@string/text_dosis"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etnombre_med" />
+
+    <EditText
+        android:id="@+id/etlaboratorio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:background="@drawable/rounded_background"
+        android:padding="5dp"
+        android:hint="@string/text_laboratorio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etdosis_med" />
+
+    <EditText
+        android:id="@+id/etadmin_med"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:background="@drawable/rounded_background"
+        android:padding="5dp"
+        android:hint="@string/text_administracion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etlaboratorio" />
+
+    <EditText
+        android:id="@+id/etformato_med"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:background="@drawable/rounded_background"
+        android:padding="5dp"
+        android:hint="@string/text_formato"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etadmin_med" />
+
+    <Button
+        android:id="@+id/btnNewMed"
+        android:backgroundTint="@color/pewter_blue_light"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:text="@string/new_medicamento"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etformato_med" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

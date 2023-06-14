@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="net.adrinilo.farmagenda.ui.LoginFragment"
+        android:label="Cuenta de usuario"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_navigation"
+            app:destination="@id/navigation" />
+    </fragment>
+    <navigation android:id="@+id/navigation"
+        app:startDestination="@id/inicioFragment">
+        <fragment
+            android:id="@+id/userFragment"
+            android:name="net.adrinilo.farmagenda.ui.UserFragment"
+            android:label="Datos de usuario"
+            tools:layout="@layout/fragment_user" >
+            <action
+                android:id="@+id/action_userFragment_to_loginFragment"
+                app:destination="@id/loginFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/webViewFragment"
+            android:name="net.adrinilo.farmagenda.ui.WebViewFragment"
+            android:label="Prospecto"
+            tools:layout="@layout/fragment_web_view">
+            <argument
+                android:name="htmlUrl"
+                android:defaultValue="defaultValue"
+                app:argType="string" />
+        </fragment>
+        <fragment
+            android:id="@+id/inicioFragment"
+            android:name="net.adrinilo.farmagenda.ui.InicioFragment"
+            android:label="Inicio"
+            tools:layout="@layout/fragment_inicio">
+            <action
+                android:id="@+id/action_inicioFragment_to_loginFragment"
+                app:destination="@id/loginFragment" />
+            <action
+                android:id="@+id/action_inicioFragment_to_diaFragment"
+                app:destination="@id/diaFragment" />
+            <action
+                android:id="@+id/action_inicioFragment_to_tratamientoFragment"
+                app:destination="@id/tratamientoFragment" />
+            <action
+                android:id="@+id/action_inicioFragment_to_userFragment"
+                app:destination="@id/userFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/diaFragment"
+            android:name="net.adrinilo.farmagenda.ui.DiaFragment"
+            android:label="Calendario"
+            tools:layout="@layout/fragment_dia">
+            <action
+                android:id="@+id/action_diaFragment_to_newMedicamentoFragment"
+                app:destination="@id/newMedicamentoFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/newMedicamentoFragment"
+            android:name="net.adrinilo.farmagenda.ui.NewMedicamentoFragment"
+            android:label="Añadir Medicamento"
+            tools:layout="@layout/fragment_new_medicine">
+            <action
+                android:id="@+id/action_newMedicamentoFragment_to_diaFragment"
+                app:destination="@id/diaFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/tratamientoFragment"
+            android:name="net.adrinilo.farmagenda.ui.TratamientoFragment"
+            android:label="Nuevo Tratamiento"
+            tools:layout="@layout/fragment_tratamiento">
+            <action
+                android:id="@+id/action_tratamientoFragment_to_inicioFragment"
+                app:destination="@id/inicioFragment" />
+            <argument
+                android:name="selectedmedid"
+                android:defaultValue="defaultvalue"
+                app:argType="string" />
+            <argument
+                android:name="selectedmedname"
+                android:defaultValue="defaultValue"
+                app:argType="string" />
+            <action
+                android:id="@+id/action_tratamientoFragment_to_apiMedFragment"
+                app:destination="@id/apiMedFragment" />
+            <argument
+                android:name="selectedmedprospecto"
+                android:defaultValue="defaultValue"
+                app:argType="string" />
+            <action
+                android:id="@+id/action_tratamientoFragment_to_webViewFragment"
+                app:destination="@id/webViewFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/apiMedFragment"
+            android:name="net.adrinilo.farmagenda.ui.ApiMedFragment"
+            android:label="Seleccionar Medicamento"
+            tools:layout="@layout/fragment_api_med">
+            <action
+                android:id="@+id/action_apiMedFragment_to_tratamientoFragment"
+                app:destination="@id/tratamientoFragment">
+                <argument
+                    android:name="selectedmedid"
+                    android:defaultValue="medid" />
+                <argument
+                    android:name="selectedmedname"
+                    android:defaultValue="medname" />
+            </action>
+        </fragment>
+    </navigation>
+</navigation>
